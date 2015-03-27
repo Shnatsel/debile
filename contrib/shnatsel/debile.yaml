@@ -1,0 +1,40 @@
+---
+Users:  # Users of Debile
+    - name: Clement Schreiner
+      email: clement@mux.me
+      pgp: DD689A73A7CAFAED446D9C9C650A92899BB9E0AA
+      ssl: 00000000000000000EADBEEF0000000000000000
+
+Builders:  # Machines that can build
+    - name: debile-slave
+      maintainer: clement@mux.me
+      pgp: ------SLAVE-PGP-FINGERPRINT-HERE--------
+      ssl: 00000000000000000EADBEE00000000000000000
+
+Suites:
+    - name: unstable
+
+Components:
+    - name: main
+
+Arches:
+    - name: amd64
+
+Checks:
+    - name: lintian
+      source: true
+      binary: true
+      build: false
+
+Groups:
+    - name: default
+      maintainer: clement@mux.me
+
+      suites:
+          - suite: unstable
+            components:
+                - main
+            arches:
+                - amd64
+            checks:
+                - lintian

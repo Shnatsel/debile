@@ -1,0 +1,22 @@
+---
+xmlrpc:
+    host: localhost
+    port: 22017
+    # ca_certs: /etc/ssl/certs/ca-certificates.crt
+
+gpg: ------SLAVE-PGP-FINGERPRINT-HERE--------
+
+dput:
+    host: localhost
+
+suites:
+    - unstable
+
+components:
+    - main
+
+arches:
+    - amd64
+
+checks:
+    - lintian
